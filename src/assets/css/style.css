@@ -1,0 +1,588 @@
+*,
+::before,
+::after{
+    font-family: 'Noto Sans JP', sans-serif;
+    border-style: solid;
+    border-width: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color:  transparent;
+    line-height: 1.15;
+}
+
+body {
+    margin: 0;
+}
+
+.l-main{
+    padding-top: 56px;
+}
+.l-container{
+    margin: 0 auto;
+    max-width: 1032px;
+    padding: 0 16px;
+    width: 100%;
+    position: relative;
+}
+
+
+main {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "posse-icon";
+    src: url(../assets/fonts/posse-icon.ttf),
+        format("truetype"),
+        url(../assets/fonts/posse-icon.woff) 
+        format("woff"),
+        url(../assets/fonts/posse-icon.svg),
+        format("svg");
+        font-display: inline-block;
+        font-style: normal;
+        font-weight: normal;
+}
+
+.p-header{
+    align-items: center;
+    background-color:#fff;
+    display: flex;
+    padding: 15px 24px;
+    justify-content: space-between;
+}
+.l-header{
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    box-shadow: 1px 1px 5px black;
+  }
+.p-header_nav_list{
+    display: flex;
+    gap: 30px;
+    font-weight: bold;
+    color: #adadad;
+    list-style: none;
+}
+#g-nav{
+  display: none;
+}
+.p-heading{
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.8;
+    font-size: 24px;
+}
+.p-heading__caption{
+    color: #0071bc;
+    display: block;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+
+/* メインコンテンツ */
+/* 入退出ボタン */
+.enter_exit_btn{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+/*ボタンの形状*/
+.float1{
+    border: 1px solid #ccc;
+    color: #fff;
+    background-color: crimson;
+    padding:10px 20px;
+    display: inline-block;
+    text-decoration: none; 
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    border-radius: 15px;
+}
+
+/*hoverをしたらボックスに影がつく*/
+.float1:hover {
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+}
+
+/*ボタンの形状*/
+.float2{
+    border: 1px solid #ccc;
+    color: #fff;
+    background-color: #0071bc;
+    padding:10px 20px;
+    display: inline-block;
+    text-decoration: none; 
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    border-radius: 15px;
+}
+.exit_btn{
+  background-color: #0071bc;
+  color: #fff;
+}
+.enter_text{
+  color:#fff;
+}
+.enter_link{
+  text-decoration:none;
+  color: #fff;
+  padding: 6px;
+}
+
+/*hoverをしたらボックスに影がつく*/
+.float2:hover {
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+}
+
+
+/* モーダル */
+/*infoエリアをはじめは非表示*/
+#info{
+	display: none;
+}
+#info2{
+	display: none;
+}
+
+/*モーダルの横幅を変更したい場合*/
+.modaal-container{
+    max-width: 600px;
+}
+
+/*モーダルのボタンの色を変更したい場合*/
+.modaal-close:after, 
+.modaal-close:before{
+	background:#ccc;	
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before{
+	background:#666;
+}
+.range_slider {
+    display: flex;
+    padding: 30px 0px 0px;
+}
+
+.range_slider_min,
+.range_slider_max {
+    padding: 0px 10px;
+    font-size: 1.2rem;
+}
+
+.range_slider_input {
+    position: relative;
+    width: 100%;
+}
+
+.range_slider_input_current {
+    position: relative;
+    margin: 0px auto;
+    width: 97.5%;
+}
+
+.range_slider_input_current span {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0px 1em;
+    border-radius: 5px;
+    background-color: #3388dd;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.range_slider_input input[type=range] {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    width: 100%;
+    border: none;
+    -webkit-appearance: none;
+}
+
+.range_slider_input input[type=range]:focus {
+    outline: 0px;
+}
+
+.range_slider_input input[type=range]::-webkit-slider-runnable-track {
+    background: #888;
+    height: 2px;
+}
+
+.range_slider_input input[type=range]::-moz-range-track {
+    background: #888;
+    height: 2px;
+}
+
+.range_slider_input input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    color: #fff;
+    height: 20px;
+    width: 20px;
+    background: #3388dd;
+    margin-top: -10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.range_slider_input input[type=range]::-moz-range-thumb {
+    color: #fff;
+    height: 20px;
+    width: 20px;
+    background: #3388dd;
+    margin-top: -10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.exist_box{
+  box-shadow: 0 0.5rem 1rem hsl(0 0% 0% / 20%);
+  border-radius: 15px;
+}
+.exist_content{
+  display: flex;
+  margin-bottom: 24px;
+}
+.exist_name{
+  font-size: 30px;
+}
+
+
+
+.footer{
+    height: 150px;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: solid 1px #eee;
+    margin-top: 80px;
+}
+.footer_logo{
+    display: block;
+    margin: 0 auto;
+    width: 202px;
+    height: 39px;
+    margin-top: 56px;
+}
+.footer_logo img{
+    width: 100%;
+}
+
+.p-footer__copyright{
+    line-height: 1.5px;
+    padding: 38px 24px 33px;
+    border: solid 1px #eee; 
+}
+
+
+
+/* プロフィール一覧ページのCSSここからーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/*tabの形状*/
+.tab{
+	display: flex;
+	flex-wrap: wrap;
+}
+.tab li a{
+	display: block;
+	background:#ddd;
+	margin:0 2px;
+	padding:10px 20px;
+}
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a{
+	background:#fff;
+}
+.title_text{
+  font-size: 36px;
+  font-weight: 100;
+  font-weight: bold;
+}
+.prof_box{
+  box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%);
+  border-radius: 15px;
+}
+
+/*エリアの表示非表示と形状*/
+.area {
+	display: none;/*はじめは非表示*/
+	opacity: 0;/*透過0*/
+	background: #fff;
+	padding:50px 20px;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;/*表示*/
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.no_dot{
+  list-style:none
+}
+/* ヘッダーに隠れるのを防ぐ */
+.p-top-container{
+  margin-top: 80px;
+}
+/* メンバープロフィール */
+.prof_content{
+  display: flex;
+}
+.pro__img{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 10px;
+}
+.prof_text{
+  width: 50%;
+  margin-left: 20px;
+}
+.prof_name{
+  font-size: 30px;
+}
+
+@keyframes displayAnime{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+
+
+/* プロフィール一覧ページのCSSここまでーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+@media not all and (min-width: 768px){
+    .p-header{
+        background-color: #fff;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        left: 0;
+        padding: 16px;
+        position: fixed;
+        transition: opacity 0.4s, visibility 0.4s;
+        display: block;
+        height: 60px;
+        
+        }
+    .p-header_logo{
+      left: 16px;
+        }
+    .p-header_inner{
+      display: none;
+    }
+        /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+    .openbtn{
+      /*ボタン内側の基点となるためrelativeを指定。
+    追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background: #fff;
+    right: -339px;
+    top: -38px;
+    }
+
+    /*ボタン内側*/
+
+    .openbtn span{
+        display: inline-block;
+        transition: all .4s;/*アニメーションの設定*/
+        position: absolute;
+        left: 13px;
+        height: 2px;
+      background-color: #666;
+      }
+    
+    .openbtn span:nth-of-type(1) {
+      top:22px;	
+        width: 50%;
+    }
+
+    .openbtn span:nth-of-type(2) {
+      top:29px;
+        width:50%;
+    }
+
+    /*activeクラスが付与されると線が回転して×に*/
+
+    .openbtn.active span:nth-of-type(1) {
+        top: 20px;
+        left: 16px;
+        transform: translateY(6px) rotate(-45deg);
+        width: 35%;
+        z-index: 9999;
+    }
+
+    .openbtn.active span:nth-of-type(2) {
+        top: 32px;
+        left: 16px;
+        transform: translateY(-6px) rotate(45deg);
+        width: 35%;
+        z-index: 9999;
+    }
+    
+
+
+    /*========= ナビゲーションのためのCSS ===============*/
+
+    #g-nav{
+        /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+        position:fixed;
+      z-index: -1;
+      opacity: 0;
+      /*はじめは透過0*/
+      /*ナビの位置と形状*/
+      top:0;
+      left: 0px;
+      width:100%;
+        height: 100vh;
+        /*ナビの高さ*/
+      background:#fff;
+        /*動き*/
+      transition: all 0.3s;
+      display: none;
+    }
+
+    /*アクティブクラスがついたら透過なしにして最前面へ*/
+    #g-nav.panelactive{
+      opacity: 1;
+      z-index:999;
+      display: block;
+    }
+
+    /*ナビゲーションの縦スクロール*/
+    #g-nav.panelactive #g-nav-list{
+        /*ナビの数が増えた場合縦スクロール*/
+        position: fixed;
+        z-index: 999; 
+        width: 100%;
+        height: 100vh;/*表示する高さ*/
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /*ナビゲーション*/
+    .hamburger__list{
+        display: none;
+        /*ナビゲーション天地中央揃え*/
+        position: absolute;
+        z-index: 999;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+
+    #g-nav.panelactive ul {
+        display: block;
+    }
+    /*リストのレイアウト設定*/
+
+    #g-nav li{
+      list-style: none;
+        text-align: center; 
+        margin-left: 8px;
+    }
+
+    #g-nav li a{
+      color: #333;
+      text-decoration: none;
+      padding:10px;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: bold;
+    }
+   
+    .p-header.is-open .p-header__inner{
+        opacity: 1;
+        visibility: visible;
+    }
+    .p-header_nav_list{
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+  .footer {
+    height: 150px;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: solid 1px #eee;
+    margin-top: 297px;
+  }
+  .hamburger{
+    display: none;
+  }
+  .l-main {
+      padding-top: 80px;
+    }
+    .l-container {
+      padding: 0 24px;
+    }
+    .l-footer__inner {
+      padding: 56px 24px 48px;
+    }
+    .p-header__logo {
+      width: 148px;
+    }
+    .p-header__button {
+      display: none;
+    }
+    .p-header__inner {
+      align-items: center;
+      margin-left: auto;
+    }
+    .p-header__nav__list {
+      gap: 32px;
+    }
+    .p-header__nav__item__link {
+      color: #666;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+    }
+}
+ 

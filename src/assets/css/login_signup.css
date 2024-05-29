@@ -1,0 +1,42 @@
+body {
+  background-color: #f3f4f6;
+}
+
+.l-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 5%;
+  /* width: 50%; */
+  text-align: center;
+  box-shadow: 1px 1px 5px #c6c6c6;
+}
+
+.title {
+  margin-bottom: 36px;
+  font-weight: bold;
+  
+}
+
+.input_container {
+  width: 60%;
+  display: inline-block;
+  justify-content: center;
+}
+
+@media not all and (min-width: 768px) {
+  .l-main {
+    background-color: white;
+  }
+
+  .container {
+    width: 100%;
+    box-shadow: none;
+  }
+}
